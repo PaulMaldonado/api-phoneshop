@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
+import path from 'path';
 
 const app = express();
 
@@ -14,7 +15,7 @@ import dashboardRoutes from './routes/user.routes';
 
 app.use(cors());
 // middleware dotenv
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));

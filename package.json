@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "System inventary for products",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon src/index.js --exec babel-node",
     "start": "node src/index.js",
     "build": "babel src --out-dir dist"
   },

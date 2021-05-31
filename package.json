@@ -4,6 +4,7 @@
   "description": "System inventary for products",
   "main": "src/index.js",
   "type": "module",
+  "engines": { "node": "14.15.0", "npm": "7.10.0" },
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "start": "node src/index.js",

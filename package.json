@@ -2,7 +2,7 @@
   "name": "inventario-phoneshop",
   "version": "1.0.0",
   "description": "System inventary for products",
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",

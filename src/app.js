@@ -15,7 +15,7 @@ import dashboardRoutes from './routes/user.routes';
 
 app.use(cors());
 // middleware dotenv
-dotenv.config({ path: path.join(__dirname, '.env') });
+dotenv.config();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));

@@ -1,24 +1,4 @@
 import Product from '../models/Product';
-import fs from 'fs';
-import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
-import multer from 'multer';
-
-// Función para subir imagenes
-const storage = multer.diskStorage({
-    destination: function(req, res, cb) {
-        fs.mkdir('./uploads/', (error) => {
-            cb(null, './uploads/');
-        })
-    },
-
-    filename: function(req, res, cb) {
-        cb(null, uuidv4() + path.extname(file.originalname));
-    }
-});
-
-// Exportando función para subir imagenes
-export const uploadImage = multer({ storage: storage }).single('image');
 
 // Método para crear nuevo productos
 export const createProduct = async (req, res) => {
@@ -30,7 +10,6 @@ export const createProduct = async (req, res) => {
             name, 
             description,
             mark,
-            image: req.file,
             stock_minimum,
             stock
         });
@@ -143,7 +122,6 @@ export const updateProductById = async (req, res) => {
         name,
         description,
         mark,
-        image: req.file,
         stock_minimum,
         stock
     }, { new: true })

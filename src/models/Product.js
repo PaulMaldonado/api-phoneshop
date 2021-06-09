@@ -2,6 +2,11 @@ import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
 const productSchema = new Schema({
+    code: {
+        type: Number,
+        required: [true, 'El código del producto no puede estar vacio']
+    },
+
     name: {
         type: String,
         required: [true, 'El nombre del producto es obligatorio']
@@ -14,10 +19,6 @@ const productSchema = new Schema({
     mark: {
         type: String,
         required: [true, 'El módelo del producto es obligatorio']
-    },
-
-    image: {
-        type: String
     },
 
     stock_minimum: {

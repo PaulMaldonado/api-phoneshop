@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 import cors from 'cors';
-import path from 'path';
 
 const app = express();
 
@@ -18,7 +17,6 @@ app.use(cors());
 dotenv.config();
 app.use(morgan('dev'));
 app.use(express.json());
-app.use('/uploads', express.static('uploads'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
